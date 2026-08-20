@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Mystery Box Keberuntungan</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        .box {
+            font-size: 120px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background: gold;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: orange;
+            transform: scale(1.05);
+        }
+
+        #hasil {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🎁 Mystery Box</h1>
+
+        <p>Uji keberuntunganmu! Siapa tahu kamu mendapatkan hadiah terbaik 😎</p>
+
+        <div class="box" onclick="bukaBox()">
+            🎁
+        </div>
+
+        <button onclick="bukaBox()">
+            BUKA MYSTERY BOX
+        </button>
+
+        <div id="hasil"></div>
+    </div>
+
+
+    <script>
+        function bukaBox() {
+
+            let hadiah = [
+                "🎉 Selamat! Kamu mendapatkan keberuntungan besar!",
+                "💰 Kamu mendapatkan hadiah Rp100.000!",
+                "🏆 Kamu mendapatkan hadiah spesial!",
+                "🍀 Hari ini adalah hari keberuntunganmu!",
+                "😅 Yah... coba lagi nanti!",
+                "🔥 WOW! Kamu mendapatkan JACKPOT!",
+                "🎁 Kamu mendapatkan Mystery Prize!"
+            ];
+
+            let angkaAcak = Math.floor(Math.random() * hadiah.length);
+
+            document.getElementById("hasil").innerHTML =
+                hadiah[angkaAcak];
+        }
+    </script>
+
+</body>
+</html>
